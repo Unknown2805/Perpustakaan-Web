@@ -22,6 +22,25 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     </head>
     <body style="background-image: url('{{asset('images/landing2.jpg')}}');background-position:auto;height: 80%;background-repeat: no-repeat;background-size: 100% 100%;">
+        <div class="row me-4 mt-3">
+            <div class="d-flex justify-content-end">
+                <p style="font-size: 22px;font-weight:bold">
+                    <a href="{{ url('/login') }}" class="text-light">Login</a>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-12">
+                    <h2 class="mt-5">
+                        <div class="text-center">
+                            <img src="{{$identitas[0]->gambar ? asset($identitas[0]->gambar) : asset('/images/image.png') }}" alt="" class="avatar avatar-xl mx-auto" style="height:100px;width:100px">
+                        </div>
+                        <div class="text-center mt-3">
+                            {{$identitas[0]->nama_app}}
+                        </div>
+                    </h2>
+            </div>
+        </div>
         <div class="row ms-3 mt-4">
             @foreach ($kategori as $k)
                 <h2>{{$k->nama}}</h2>       
