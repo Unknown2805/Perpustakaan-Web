@@ -33,7 +33,9 @@ class LaporanController extends Controller
                 'tgl1' => $tgl1,
                 'tgl2' => $tgl2
             ])->setPaper('a4', 'landscape');
+            // dd($pdf);
             return $pdf->download('laporan-peminjaman.pdf');
+
         }      
     }
     public function pdfk(Request $request)

@@ -18,7 +18,7 @@
     
     <div class="col-12 col-md-12">
         <h1 class="text-center">
-            <img src="{{public_path($i->gambar)}}" style="width:150px;height:150px">
+            <img src="{{$i->gambar ? public_path($i->gambar) : public_path('/images/image.png')}}" style="width:150px;height:150px;border-radius:20px" >
         </h1>
         <span>
             <p class="text-center" style="font-size:30px">{{$i->nama_app}}</p>
