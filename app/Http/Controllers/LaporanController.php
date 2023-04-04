@@ -43,7 +43,7 @@ class LaporanController extends Controller
         $tgl1 = carbon::parse($request->start)->format('Y-m-d');
         // dd($tgl1);
         $tgl2 = carbon::parse($request->end)->format('Y-m-d');
-        $pengembalian= Peminjaman::whereNotNull('tgl_pengembalian')->whereBetween('tgl_peminjaman', [$tgl1, $tgl2])->get();    
+        $pengembalian= Peminjaman::whereNotNull('tgl_pengembalian')->whereBetween('tgl_pengembalian', [$tgl1, $tgl2])->get();    
         $data = $pengembalian->count();
         // dd($pengembalian->count());
         if($data === 0){
