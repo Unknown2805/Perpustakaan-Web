@@ -43,6 +43,8 @@ class BukuController extends Controller
                 'isbn' => $request->isbn,
                 'j_buku_baik' => $request->j_buku_baik,
                 'j_buku_rusak' => $request->j_buku_rusak,
+                'denda_r' => $request->denda_r,
+                'denda_h' => $request->denda_h,
                 ]);
         }else{
             $buku = Buku::create([
@@ -54,6 +56,8 @@ class BukuController extends Controller
                 'isbn' => $request->isbn,
                 'j_buku_baik' => $request->j_buku_baik,
                 'j_buku_rusak' => $request->j_buku_rusak,
+                'denda_r' => $request->denda_r,
+                'denda_h' => $request->denda_h,
                 ]);
         }
 
@@ -87,6 +91,8 @@ class BukuController extends Controller
                 'isbn' => $request->isbn,
                 'j_buku_baik' => $request->j_buku_baik,
                 'j_buku_rusak' => $request->j_buku_rusak,
+                'denda_r' => $request->denda_r,
+                'denda_h' => $request->denda_h,
             ]);
 
         }else{
@@ -100,6 +106,8 @@ class BukuController extends Controller
                 'isbn' => $request->isbn,
                 'j_buku_baik' => $request->j_buku_baik,
                 'j_buku_rusak' => $request->j_buku_rusak,
+                'denda_r' => $request->denda_r,
+                'denda_h' => $request->denda_h,
             ]);
         }
         return response()->json([

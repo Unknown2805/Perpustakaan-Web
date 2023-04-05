@@ -40,6 +40,16 @@
                 </div>
                 <div class="row">
                     <div class="col-6 col-md-6">
+                        <label>Denda Buku Rusak</label>
+                        <input type="number" name="denda_r" class="form-control">
+                    </div>
+                    <div class="col-6 col-md-6">
+                        <label>Denda Buku Hilang</label>
+                        <input type="number" name="denda_h" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 col-md-6">
                         <label>Kategori</label>
                         <select name="kategori_id" class="form-select">
                             @foreach ($kategori as $k)
@@ -114,6 +124,16 @@
                         <div class="col-6 col-md-6">
                             <label>Buku Rusak</label>
                             <input type="number" name="j_buku_rusak" class="form-control" value="{{$b->j_buku_rusak}}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-md-6">
+                            <label>Denda Buku Rusak</label>
+                            <input type="number" name="denda_r" class="form-control" value="{{$b->denda_r}}">
+                        </div>
+                        <div class="col-6 col-md-6">
+                            <label>Denda Buku Hilang</label>
+                            <input type="number" name="denda_h" class="form-control" value="{{$b->denda_h}}">
                         </div>
                     </div>
                     <div class="row">

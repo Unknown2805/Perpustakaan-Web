@@ -24,6 +24,8 @@ return new class extends Migration
             $table->integer('isbn');
             $table->integer('j_buku_baik');
             $table->integer('j_buku_rusak');
+            $table->integer('denda_r');
+            $table->integer('denda_h');
             $table->timestamps();
         });
     }

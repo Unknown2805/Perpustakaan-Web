@@ -20,6 +20,7 @@ class BukuController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request);
         if($request->gambar){
 
             $img = $request->file('gambar');
@@ -43,8 +44,11 @@ class BukuController extends Controller
         'isbn' => $request->isbn,
         'j_buku_baik' => $request->j_buku_baik,
         'j_buku_rusak' => $request->j_buku_rusak,
+        'denda_r' => $request->denda_r,
+        'denda_h' => $request->denda_h,
         ]);
         return redirect()->back();
+
     }
 
     public function update(Request $request,$id)
@@ -69,6 +73,8 @@ class BukuController extends Controller
                 'isbn' => $request->isbn,
                 'j_buku_baik' => $request->j_buku_baik,
                 'j_buku_rusak' => $request->j_buku_rusak,
+                'denda_r' => $request->denda_r,
+                'denda_h' => $request->denda_h,
             ]);
         }else{
             $buku = Buku::find($id)->update([
@@ -80,6 +86,8 @@ class BukuController extends Controller
                 'isbn' => $request->isbn,
                 'j_buku_baik' => $request->j_buku_baik,
                 'j_buku_rusak' => $request->j_buku_rusak,
+                'denda_r' => $request->denda_r,
+                'denda_h' => $request->denda_h,
             ]);
         }
 

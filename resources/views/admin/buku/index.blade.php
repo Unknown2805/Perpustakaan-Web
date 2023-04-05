@@ -20,6 +20,8 @@
                 <th>ISBN</th>
                 <th>Buku Baik</th>
                 <th>Buku Rusak</th>
+                <th>Denda Rusak</th>
+                <th>Denda Hilang</th>
                 <th>Jumlah Buku</th>
                 <th>Aksi</th>
             </thead>
@@ -38,6 +40,8 @@
                         <td>{{$b->isbn}}</td>
                         <td>{{$b->j_buku_baik}}</td>
                         <td>{{$b->j_buku_rusak}}</td>
+                        <td>{{$b->denda_r}}</td>
+                        <td>{{$b->denda_h}}</td>
                         <td>{{$b->j_buku_baik + $b->j_buku_rusak}}</td>
                         <td>
                             <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editBuku{{$b->id}}">

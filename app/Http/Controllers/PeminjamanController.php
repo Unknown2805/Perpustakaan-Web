@@ -79,7 +79,7 @@ class PeminjamanController extends Controller
                 Peminjaman::find($id)->update([
                 'tgl_pengembalian' => Carbon::now()->format('Y-m-d'),
                 'kondisi_buku_saat_dikembalikan' => $request->kondisi_buku_saat_dikembalikan,
-                'denda' => 20000
+                'denda' => $buku->denda_r
                 ]);
 
             }elseif($request->kondisi_buku_saat_dikembalikan === 'hilang'){
@@ -87,7 +87,7 @@ class PeminjamanController extends Controller
                 Peminjaman::find($id)->update([
                 'tgl_pengembalian' => Carbon::now()->format('Y-m-d'),
                 'kondisi_buku_saat_dikembalikan' => $request->kondisi_buku_saat_dikembalikan,
-                'denda' => 50000
+                'denda' => $buku->denda_h
                 ]);
 
             }
@@ -107,7 +107,7 @@ class PeminjamanController extends Controller
                 Peminjaman::find($id)->update([
                 'tgl_pengembalian' => Carbon::now()->format('Y-m-d'),
                 'kondisi_buku_saat_dikembalikan' => $request->kondisi_buku_saat_dikembalikan,
-                'denda' => 50000
+                'denda' => $buku->denda_h
                 ]);
 
             }
