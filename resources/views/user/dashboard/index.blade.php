@@ -57,11 +57,10 @@
 
         @foreach ($identitas as $i)
         <div class="row d-flex justify-content-center mb-4">
-
             <img src="{{ $i->gambar ? asset($i->gambar) : asset('/images/image.png') }}" alt="" style="height:170px;width:230px;border-radius:20px;">
             <h4 class="text-center mt-3">{{$i->nama_app}}</h4>
             <p class="text-center mt-3">{{$i->alamat}} , {{$i->email_app}}</p>
-
         </div>
         @endforeach
 @endsection
+ 

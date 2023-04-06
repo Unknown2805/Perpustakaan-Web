@@ -125,3 +125,6 @@ Route::middleware(['auth','role:user'])->prefix('/user')->group(function(){
 Route::controller(App\Http\Controllers\AnggotaController::class)->prefix('/anggota')->group(function(){
     Route::post('/register','register');});
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::controller(App\Http\Controllers\LaporanController::class)->prefix('/bebas-pustaka')->group(function(){
+    Route::put('/{id}','bebas-pustaka');
+});
