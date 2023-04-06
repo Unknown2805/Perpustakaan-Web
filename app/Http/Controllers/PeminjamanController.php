@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Carbon\Carbon;
 use PDF;
+use Illuminate\Support\Facades\Storage;
 
 class PeminjamanController extends Controller
 {
@@ -25,9 +26,28 @@ class PeminjamanController extends Controller
     }
     public function user()
     {
+
         $buku = Buku::all();
         $peminjaman = Peminjaman::where('user_id',Auth::user()->id)->get();
-        return view('user.peminjaman.index',compact('peminjaman','buku'));
+        $cek = Peminjaman::whereNull('tgl_pengembalian')->where('user_id',Auth::user()->id)->count();
+        if(!$cek){
+            $pdf = PDF::loadview('user.bebas-pustaka.index',
+            [
+                'peminjaman'=>$peminjaman,
+                'tgl1' => Carbon::now(),
+                'tgl2' => Carbon::now()
+            ])->setPaper('a4', 'landscape');
+
+            $content =  $pdf->download()->getOriginalContent();
+            Storage::put('bebas-pustaka/'.Auth::user()->username.Auth::user()->id.'.pdf',$content);
+            return view('user.peminjaman.index',compact('peminjaman','buku','cek'));
+        }else{
+
+            return view('user.peminjaman.index',compact('peminjaman','buku'));
+            
+
+        }
+        // dd($cek);
     }
     public function store(Request $request)
     {

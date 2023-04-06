@@ -57,8 +57,9 @@ class LaporanController extends Controller
                 'tgl1' => $tgl1,
                 'tgl2' => $tgl2
             ])->setPaper('a4', 'landscape');
-            return $pdf->download('laporan-pengembalian.pdf');
-        }   
+            $content =  $pdf->download()->getOriginalContent();
+            Storage::put('bebas-pustaka/'.Auth::user()->username.Auth::user()->id.'.pdf',$content);
+            }   
     }
     public function pdfa(Request $request)
     {
@@ -168,4 +169,6 @@ class LaporanController extends Controller
                 return Excel::download(new AnggotaExport($request), 'anggota.xlsx');
             }
     }
+
+
 }

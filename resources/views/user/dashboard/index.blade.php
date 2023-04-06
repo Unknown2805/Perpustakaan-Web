@@ -62,5 +62,6 @@
             <p class="text-center mt-3">{{$i->alamat}} , {{$i->email_app}}</p>
         </div>
         @endforeach
+        
 @endsection
  

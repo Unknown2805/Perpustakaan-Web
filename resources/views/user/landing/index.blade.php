@@ -21,7 +21,7 @@
         />
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     </head>
-    <body style="background-image: url('{{asset('images/landing2.jpg')}}');background-position:auto;height: 100%;background-repeat: no-repeat;background-size: 100% 100%;">
+    <body style="background-image: url('{{asset('images/landing2.jpg')}}');background-position:cover;background-repeat: no-repeat;background-size: 100% 100%;">
         <div class="row me-4 mt-3">
             <div class="d-flex justify-content-end">
                 <p style="font-size: 22px;font-weight:bold">

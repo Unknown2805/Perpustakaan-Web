@@ -101,3 +101,23 @@
     </div>
   </div>
 @endforeach
+
+<div class="modal fade" id="qr" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">QR Code</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+  
+            <div class="modal-body">
+              <div class="text-center">
+
+                {{QrCode::size(200)->generate('http://127.0.0.1:8000/storage/bebas-pustaka/'.Auth::user()->username.Auth::user()->id.'.pdf')}}
+
+              </div>
+            </div>
+
+    </div>
+  </div>
+</div>

@@ -5,9 +5,19 @@
         <h6>Peminjaman</h6>
     </div>
     <div class="card-body">
-        <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addPeminjaman">
-            Add
-        </a>
+        <div class="d-flex justify-content-between">
+
+            <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addPeminjaman">
+                Add
+            </a>
+            @if($cek > 0)
+
+            @else
+            <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#qr">
+                QR Code
+            </a>
+            @endif
+        </div>
         <table class="table" id="table1">
             <thead>
                 <th>No</th>
